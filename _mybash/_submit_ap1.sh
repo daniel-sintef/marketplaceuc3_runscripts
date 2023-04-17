@@ -16,7 +16,7 @@ module load Python/3.9.5
 module load fluent/2020R1
 
 source /home/$USER/virtualenvs/mpuc3_ontology/bin/activate
-PATH=$PATH:/home/$USER/_mypython/uc3wrapper
+PATH=$PATH:/home/$USER/uc3run_scripts/_mypython/uc3wrapper
 
 UUID=$(basename $PWD)
 

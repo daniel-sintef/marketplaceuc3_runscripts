@@ -15,17 +15,17 @@ module load Python/3.9.5
 
 module load fluent/2020R1
 
-source /home/danielma/virtualenvs/mpuc3_ontology/bin/activate
-PATH=$PATH:/home/danielma/_mypython/uc3wrapper
+source /home/$USER/virtualenvs/mpuc3_ontology/bin/activate
+PATH=$PATH:/home/$USER/uc3run_scripts/_mypython/uc3wrapper
 
-UUID=$(basename $PWD)
+_submit.shUUID=$(basename $PWD)
 
 # copy over the inputs 
 sftp droplet:/home/aiidawork/$UUID/inputs.json ./userinputsmodel1.json
 
 # prep the input files
 uc3wrapper.py
-cp -r /home/danielma/Final_A1flame/* ./
+cp -r /home/$USER/Final_A1flame/* ./
 
 # run FLUENT
 export FLUENT_GUI=off
