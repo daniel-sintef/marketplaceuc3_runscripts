@@ -6,6 +6,7 @@ import json
 import math
 from properties import *
 import pandas as pd
+import os 
 
 user = os.environ.get('USER')
 base_dir = "/home/{}/test_new-flamespray/".format(user) #replace with sys.argv
