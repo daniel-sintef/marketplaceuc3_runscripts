@@ -7,6 +7,9 @@ import math
 from properties import *
 import pandas as pd
 
+user = os.environ.get('USER')
+base_dir = "/home/{}/test_new-flamespray/".format(user) #replace with sys.argv
+
 class Quantity:
     def __init__(self, name, iri):
         self.name = name
@@ -19,7 +22,7 @@ class Quantity:
         self.unit = unit
 
 
-INSTALL_PATH="/home/danielma/_mypython/uc3wrapper/"
+INSTALL_PATH="/home/{}/_mypython/uc3wrapper/".format(user)
 
 class Model:
     """
@@ -230,7 +233,7 @@ def uc3model3_wrapper(inputs,outputs):
     fileout.close()
     return
 
-uc3onto = get_ontology('/home/danielma/_mypython/uc3wrapper/uc3ttlv2.ttl')
+uc3onto = get_ontology('/home/{}/_mypython/uc3wrapper/uc3ttlv2.ttl'.format(user))
 uc3onto.load()
 
 #Autogenerate model objects from ontology

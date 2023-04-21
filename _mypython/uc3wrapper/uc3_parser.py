@@ -5,7 +5,8 @@ import os
 import pandas as pd
 
 
-base_dir = "/home/danielma/test_new-flamespray/" #replace with sys.argv
+user = os.environ.get('USER')
+base_dir = "/home/{}/test_new-flamespray/".format(user) #replace with sys.argv
 base_dir = sys.argv[1]
 output_dir = os.path.join(base_dir, "Output")
 particle_area_file = os.path.join(output_dir, "FSP-Lurederra_alumina-particle_area_flux.srp")
