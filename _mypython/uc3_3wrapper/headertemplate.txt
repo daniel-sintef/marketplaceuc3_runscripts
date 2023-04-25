@@ -1,0 +1,15 @@
+#include "udf.h"
+#include "math.h"
+
+#define R 8.314											/* J/m/K */
+
+/* Set reaction rate parameters*/
+#define logk01 {logk01}
+#define Ea1 {Ea1}				
+#define logk02 {logk02}
+#define Ea2 {Ea2}		
+#define logK0eq {logK0eq}
+#define dH {dH}
+
+/* Support particle properties*/
+#define tort {tort}						/* ***USER INPUT*** Macropore tortuosity */

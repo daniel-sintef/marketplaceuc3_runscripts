@@ -1,0 +1,25 @@
+/file/read-case-data Catalyst_test_reactor-start
+
+/solve/set/time-step 10
+/file/auto-save root-name "./Catalyst"
+
+/solve/patch cordierite () packed_bed () mp no {corderite}
+/solve/patch alumina () packed_bed () mp no {alumina}
+/define/user-defined/execute-on-demand "set_init_active_area::catalyst"
+/define/parameters/input-parameters edit "inlet_mass_flow_rate" "inlet_mass_flow_rate" {inlet_mass_flow_rate}
+/define/parameters/input-parameters edit "inlet_methane_mole_fraction" "inlet_methane_mole_fraction" {inlet_methane_mole_fraction}
+/define/parameters/input-parameters edit "inlet_water_mole_fraction" "inlet_water_mole_fraction" {inlet_water_mole_fraction}
+/define/parameters/input-parameters edit "inlet_oxygen_mole_fraction" "inlet_oxygen_mole_fraction" {inlet_oxygen_mole_fraction}
+/define/parameters/input-parameters edit "A_" "A_" {A_}
+/define/parameters/input-parameters edit "X_" "X_" {X_}
+
+(rpsetvar 'flow-time 0)
+(rpsetvar 'time-step 0)
+/solve/set/max-flow-time 12000
+/solve/dual-time-iterate 1000000 5
+/file/write-case-data Catalyst_test_reactor-end
+
+exit
+ok
+
+
