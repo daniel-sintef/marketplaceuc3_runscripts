@@ -16,18 +16,20 @@ module load Python/3.9.5
 module load fluent/2020R1
 
 source /home/$USER/virtualenvs/mpuc3/bin/activate
-PATH=$PATH:/home/$USER/_mypython/uc3wrapper
+#PATH=$PATH:/home/$USER/_mypython/uc3_3wrapper
 
 UUID=$(basename $PWD)
 
 # copy over the inputs 
-sftp droplet:/home/aiidawork/$UUID/inputs.json ./userinputsmodel2.json
+sftp droplet:/home/aiidawork/$UUID/inputs.json ./userinputsmodel3.json
 
 # prep the input files
-cp /home/$USER/_mypython/uc3_2wrapper/*.py .
-cp /home/$USER/_mypython/uc3_2wrapper/*.txt .
-python3 uc3_2wrapper.py
-cp -r /home/$USER/Final_A2/* ./
+cp /home/$USER/_mypython/uc3_3wrapper/*.py .
+cp /home/$USER/_mypython/uc3_3wrapper/*.txt .
+python3 uc3_3wrapper.py
+cp -r /home/$USER/Final_A3/* ./
+
+
 
 # run FLUENT
 export FLUENT_GUI=off
@@ -37,7 +39,7 @@ export FLUENT_GUI=off
 rm ./core*
 
 # parse the results
-python3 ap_2results2json.py $PWD
+python3 ap3_results2json.py $PWD
 
 
 # copy over the results
