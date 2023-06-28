@@ -28,4 +28,5 @@ results = {
 output_file = os.path.join(base_dir, 'results.json')
 with open(output_file, 'w') as fh:
     json.dump(results, fh)
+    fh.write("\n") # Need a newline at end of file
 

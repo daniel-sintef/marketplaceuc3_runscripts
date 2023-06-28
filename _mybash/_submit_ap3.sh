@@ -33,7 +33,7 @@ cp -r /home/$USER/Final_A3/* ./
 
 # run FLUENT
 export FLUENT_GUI=off
-#'/share/apps/modulessoftware/ansys_inc/v201/fluent/bin/fluent' '2ddp' '-g' '-slurm' '-pinfiniband' '-t20' '-i' 'Pythongenerated.jou'   
+'/share/apps/modulessoftware/ansys_inc/v201/fluent/bin/fluent' '3ddp' '-g' '-slurm' '-pinfiniband' '-t20' '-i' 'Pythongenerated.jou'   
 
 # cleanup 
 rm ./core*

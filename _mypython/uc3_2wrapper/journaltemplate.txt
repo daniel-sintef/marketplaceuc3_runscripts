@@ -15,7 +15,7 @@
 
 (rpsetvar 'flow-time 0)
 (rpsetvar 'time-step 0)
-/solve/set/max-flow-time 12000
+/solve/set/max-flow-time 1200
 /solve/dual-time-iterate 1000000 5
 /file/write-case-data Catalyst_test_reactor-end
 

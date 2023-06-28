@@ -16,7 +16,7 @@ def uc3_3wrapper():
     journal = open("journaltemplate.txt", "r").read()
     header = open("headertemplate.txt", "r").read()
     fileout1 = open("Pythongenerated.jou", "w")
-    fileout2 = open("Pythongenerated.h", "w")
+    fileout2 = open("catalyst_monolith_channel.h", "w")
 
     ch4mf = uinput["ch4mf"] 
     h2omf = uinput["h2omf"]
