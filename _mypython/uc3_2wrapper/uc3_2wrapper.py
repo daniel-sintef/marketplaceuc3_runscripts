@@ -21,7 +21,7 @@ def uc3_2wrapper():
     journal = open("journaltemplate.txt", "r").read()
     header = open("headertemplate.txt", "r").read()
     fileout1 = open("Pythongenerated.jou", "w")
-    fileout2 = open("Pythongenerated.h", "w")
+    fileout2 = open("Catalyst_test_reactor.h", "w")
 
     bedvol = math.pi / 4.0 * beddi**2 * bedl
 

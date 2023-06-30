@@ -29,13 +29,12 @@ def df_to_json_file(df, json_file):
 
     with open(json_file, 'w') as f:
         json.dump(data, f)
+        f.write("\n")
 
 
 
-#input_file = './catalyst_test_reactor-monitor.out'
-#json_file = 'result.json'
-input_file = sys.argv[1]
-json_file = sys.argv[2]
+input_file = './Monitors/catalyst_monolith_channel.out'
+json_file = 'results.json'
 
 df = read_and_parse_input_file(input_file)
 df_to_json_file(df, json_file)

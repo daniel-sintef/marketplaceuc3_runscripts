@@ -27,6 +27,7 @@ def df_to_json_file(df, json_file):
 
     with open(json_file, 'w') as f:
         json.dump(data, f)
+	f.write("\n")
 
 
 

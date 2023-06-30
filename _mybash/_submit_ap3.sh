@@ -4,8 +4,8 @@
 #SBATCH --get-user-env
 #SBATCH --output=_scheduler-stdout.txt
 #SBATCH --error=_scheduler-stderr.txt
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=20
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=18
 
 module purge
 
@@ -13,7 +13,7 @@ module load eb
 module load GCCcore/.10.3.0
 module load Python/3.9.5
 
-module load fluent/2020R1
+module load fluent/2021R2
 
 source /home/$USER/virtualenvs/mpuc3/bin/activate
 #PATH=$PATH:/home/$USER/_mypython/uc3_3wrapper
@@ -33,7 +33,7 @@ cp -r /home/$USER/Final_A3/* ./
 
 # run FLUENT
 export FLUENT_GUI=off
-#'/share/apps/modulessoftware/ansys_inc/v201/fluent/bin/fluent' '2ddp' '-g' '-slurm' '-pinfiniband' '-t20' '-i' 'Pythongenerated.jou'   
+'fluent' '3ddp' '-g' '-t36' '-i' 'Pythongenerated.jou'   
 
 # cleanup 
 rm ./core*
