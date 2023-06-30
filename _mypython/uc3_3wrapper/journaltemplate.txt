@@ -14,7 +14,7 @@
 
 (rpsetvar 'flow-time 0)
 (rpsetvar 'time-step 0)
-/solve/set/max-flow-time 12000
+/solve/set/max-flow-time 120
 /solve/dual-time-iterate 1000000 5
 /file/write-case-data Catalyst_monolith_channel-end
 
