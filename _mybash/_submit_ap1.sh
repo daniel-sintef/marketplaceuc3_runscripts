@@ -5,7 +5,7 @@
 #SBATCH --output=_scheduler-stdout.txt
 #SBATCH --error=_scheduler-stderr.txt
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=20
 
 module purge
 
@@ -29,7 +29,7 @@ cp -r /home/$USER/Final_A1flame/* ./
 
 # run FLUENT
 export FLUENT_GUI=off
-'/share/apps/modulessoftware/ansys_inc/v201/fluent/bin/fluent' '2ddp' '-g' '-slurm' '-pinfiniband' '-t4' '-i' 'Pythongenerated.jou'   
+'/share/apps/modulessoftware/ansys_inc/v201/fluent/bin/fluent' '2ddp' '-g' '-slurm' '-pinfiniband' '-t20' '-i' 'Pythongenerated.jou'   
 
 # cleanup 
 rm ./core*
