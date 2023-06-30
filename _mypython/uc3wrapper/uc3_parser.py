@@ -12,7 +12,7 @@ output_dir = os.path.join(base_dir, "Output")
 particle_area_file = os.path.join(output_dir, "FSP-Lurederra_alumina-particle_area_flux.srp")
 area_file_data = pd.read_csv(particle_area_file, skiprows=5, delim_whitespace=True)
 
-particle_volume_file = os.path.join(output_dir, "FSP-Lurederra_alumina-particle_area_flux.srp")  
+particle_volume_file = os.path.join(output_dir, "FSP-Lurederra_alumina-particle_volume_flux.srp")  
 volume_file_data = pd.read_csv(particle_volume_file, skiprows=5, delim_whitespace=True)
 
 volume_flux = float(volume_file_data.columns[1])
